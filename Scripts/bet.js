@@ -1,4 +1,4 @@
-export { placedBets, sum, betHistory, placeBet, undoBet, undoAll, updateList, updateBetValue, clearList, changeBetValue, betMore, betMax, betLess, betMin }
+export { placedBets, sum, betHistory, placeBet, undoBet, undoAll, updateList, updateBetValue, clearList, changeBetValue, convertToCurrency, betMore, betMax, betLess, betMin }
 import { loan } from "./loan.js";
 import { balance } from "./balance.js";
 import { numbers } from "./numbers.js";

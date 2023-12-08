@@ -1,4 +1,4 @@
-import { getALoan, clearLoan } from "./loan.js";
+import { getLoan, payLoan, clearLoan } from "./loan.js";
 import { betMore, betMax, betLess, betMin, placeBet, undoBet, undoAll } from "./bet.js";
 
 const TABLE = document.querySelector('#table');
@@ -86,42 +86,42 @@ LOAN_OPTION_1.addEventListener('click', (e) => {
     stopSound(click_sound);
     console.log(e.target);
     click_sound.play();
-    getALoan(1);
+    getLoan(1);
 });
 
 LOAN_OPTION_2.addEventListener('click', (e) => {
     stopSound(click_sound);
     console.log(e.target);
     click_sound.play();
-    getALoan(2);
+    getLoan(2);
 });
 
 LOAN_OPTION_3.addEventListener('click', (e) => {
     stopSound(click_sound);
     console.log(e.target);
     click_sound.play();
-    getALoan(3);
+    getLoan(3);
 });
 
 LOAN_OPTION_4.addEventListener('click', (e) => {
     stopSound(click_sound);
     console.log(e.target);
     click_sound.play();
-    getALoan(4);
+    getLoan(4);
 });
 
 LOAN_OPTION_5.addEventListener('click', (e) => {
     stopSound(click_sound);
     console.log(e.target);
     click_sound.play();
-    getALoan(5);
+    getLoan(5);
 });
 
 LOAN_OPTION_6.addEventListener('click', (e) => {
     stopSound(click_sound);
     console.log(e.target);
     click_sound.play();
-    getALoan(6);
+    getLoan(6);
 });
 
 CLOSE_LOAN.addEventListener('click', (e) => {
@@ -135,6 +135,7 @@ CLOSE_LOAN.addEventListener('click', (e) => {
 PAY_LOAN_BUTTON.addEventListener('click', (e) => {
     console.log(e.target);
     pay_sound.play();
+    payLoan();
 });
 
 HISTORY_BUTTON.addEventListener('click', (e) => {
