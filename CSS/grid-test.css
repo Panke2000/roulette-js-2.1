@@ -1,0 +1,23 @@
+[class*="straight-"] {
+    background-color: lightblue;
+}
+
+[class*="split-"] {
+    background-color: lightpink;
+}
+
+[class*="triple-"] {
+    background-color: orange;
+}
+
+[class*="corner-"] {
+    background-color: lightgreen;
+}
+
+[class*="line-"] {
+    background-color: blue;
+}
+
+[class*="street-"] {
+    background-color: yellow;
+}

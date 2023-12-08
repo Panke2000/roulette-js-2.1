@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette 2.1</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/grid.css">
+    <link rel="stylesheet" href="CSS/board.css">
+    <link rel="stylesheet" href="CSS/menu.css">
+</head>
+<body>
+    
+    <div id="table-and-list">
+        <div id="table-and-menu">
+            <div class="container" id="table">
+                <!-- ZERO -->
+                <div class="zero green-field number">
+                    <div class="straight-zero"><span>0</span></div>
+                    <div class="split-zero-1"></div>
+                    <div class="split-zero-2"></div>
+                    <div class="split-zero-3"></div>
+                </div>
+                <!-- NUMBER 1 -->
+                <div class="num1 red-field number">
+                    <div class="straight-1"><span>1</span></div>
+                    <div class="split-zero-1"></div>
+                    <div class="split-1-2"></div>
+                    <div class="split-1-4"></div>
+                    <div class="triple-zero-1-2"></div>
+                    <div class="line-1-2-3"></div>
+                    <div class="corner-1-2-4-5"></div>
+                    <div class="street-1-2-3-4-5-6"></div>
+                </div>
+                <!-- NUMBER 2 -->
+                <div class="num2 black-field number">
+                    <div class="straight-2"><span>2</span></div>
+                    <div class="split-zero-2"></div>
+                    <div class="split-1-2"></div>
+                    <div class="split-2-3"></div>
+                    <div class="split-2-5"></div>
+                    <div class="triple-zero-1-2"></div>
+                    <div class="triple-zero-2-3"></div>
+                    <div class="corner-1-2-4-5"></div>
+                    <div class="corner-2-3-5-6"></div>
+                </div>
+                <!-- NUMBER 3 -->
+                <div class="num3 red-field number">
+                    <div class="straight-3"><span>3</span></div>
+                    <div class="split-zero-3"></div>
+                    <div class="split-2-3"></div>
+                    <div class="split-3-6"></div>
+                    <div class="triple-zero-2-3"></div>
+                    <div class="line-1-2-3"></div>
+                    <div class="corner-2-3-5-6"></div>
+                    <div class="street-1-2-3-4-5-6"></div>
+                </div>
+                <!-- NUMBER 4 -->
+                <div class="num4 black-field number">
+                    <div class="straight-4"><span>4</span></div>
+                    <div class="split-1-4"></div>
+                    <div class="split-4-5"></div>
+                    <div class="split-4-7"></div>
+                    <div class="line-4-5-6"></div>
+                    <div class="corner-1-2-4-5"></div>
+                    <div class="corner-4-5-7-8"></div>
+                    <div class="street-1-2-3-4-5-6"></div>
+                    <div class="street-4-5-6-7-8-9"></div>
+                </div>
+                <!-- NUMBER 5 -->
+                <div class="num5 red-field number">
+                    <div class="straight-5"><span>5</span></div>
+                    <div class="split-2-5"></div>
+                    <div class="split-4-5"></div>
+                    <div class="split-5-6"></div>
+                    <div class="split-5-8"></div>
+                    <div class="corner-1-2-4-5"></div>
+                    <div class="corner-2-3-5-6"></div>
+                    <div class="corner-4-5-7-8"></div>
+                    <div class="corner-5-6-8-9"></div>
+                </div>
+                <!-- NUMBER 6 -->
+                <div class="num6 black-field number">
+                    <div class="straight-6"><span>6</span></div>
+                    <div class="split-3-6"></div>
+                    <div class="split-5-6"></div>
+                    <div class="split-6-9"></div>
+                    <div class="line-4-5-6"></div>
+                    <div class="corner-2-3-5-6"></div>
+                    <div class="corner-5-6-8-9"></div>
+                    <div class="street-1-2-3-4-5-6"></div>
+                    <div class="street-4-5-6-7-8-9"></div>
+                </div>
+                <!-- NUMBER 7 -->
+                <div class="num7 red-field number">
+                    <div class="straight-7"><span>7</span></div>
+                    <div class="split-4-7"></div>
+                    <div class="split-7-8"></div>
+                    <div class="split-7-10"></div>
+                    <div class="line-7-8-9"></div>
+                    <div class="corner-4-5-7-8"></div>
+                    <div class="corner-7-8-10-11"></div>
+                    <div class="street-4-5-6-7-8-9"></div>
+                    <div class="street-7-8-9-10-11-12"></div>
+                </div>
+                <!-- NUMBER 8 -->
+                <div class="num8 black-field number">
+                    <div class="straight-8"><span>8</span></div>
+                    <div class="split-5-8"></div>
+                    <div class="split-7-8"></div>
+                    <div class="split-8-9"></div>
+                    <div class="split-8-11"></div>
+                    <div class="corner-4-5-7-8"></div>
+                    <div class="corner-5-6-8-9"></div>
+                    <div class="corner-7-8-10-11"></div>
+                    <div class="corner-8-9-11-12"></div>
+                </div>
+                <!-- NUMBER 9 -->
+                <div class="num9 red-field number">
+                    <div class="straight-9"><span>9</span></div>
+                    <div class="split-6-9"></div>
+                    <div class="split-8-9"></div>
+                    <div class="split-9-12"></div>
+                    <div class="line-7-8-9"></div>
+                    <div class="corner-5-6-8-9"></div>
+                    <div class="corner-8-9-11-12"></div>
+                    <div class="street-4-5-6-7-8-9"></div>
+                    <div class="street-7-8-9-10-11-12"></div>
+                </div>
+                <!-- NUMBER 10 -->
+                <div class="num10 black-field number">
+                    <div class="straight-10"><span>10</span></div>
+                    <div class="split-7-10"></div>
+                    <div class="split-10-11"></div>
+                    <div class="split-10-13"></div>
+                    <div class="line-10-11-12"></div>
+                    <div class="corner-7-8-10-11"></div>
+                    <div class="corner-10-11-13-14"></div>
+                    <div class="street-7-8-9-10-11-12"></div>
+                    <div class="street-10-11-12-13-14-15"></div>
+                </div>
+                <!-- NUMBER 11 -->
+                <div class="num11 black-field number">
+                    <div class="straight-11"><span>11</span></div>
+                    <div class="split-8-11"></div>
+                    <div class="split-10-11"></div>
+                    <div class="split-11-12"></div>
+                    <div class="split-11-14"></div>
+                    <div class="corner-7-8-10-11"></div>
+                    <div class="corner-8-9-11-12"></div>
+                    <div class="corner-10-11-13-14"></div>
+                    <div class="corner-11-12-14-15"></div>
+                </div>
+                <!-- NUMBER 12 -->
+                <div class="num12 red-field number">
+                    <div class="straight-12"><span>12</span></div>
+                    <div class="split-9-12"></div>
+                    <div class="split-11-12"></div>
+                    <div class="split-12-15"></div>
+                    <div class="line-10-11-12"></div>
+                    <div class="corner-8-9-11-12"></div>
+                    <div class="corner-11-12-14-15"></div>
+                    <div class="street-7-8-9-10-11-12"></div>
+                    <div class="street-10-11-12-13-14-15"></div>
+                </div>
+                <!-- NUMBER 13 -->
+                <div class="num13 black-field number">
+                    <div class="straight-13"><span>13</span></div>
+                    <div class="split-10-13"></div>
+                    <div class="split-13-14"></div>
+                    <div class="split-13-16"></div>
+                    <div class="line-13-14-15"></div>
+                    <div class="corner-10-11-13-14"></div>
+                    <div class="corner-13-14-16-17"></div>
+                    <div class="street-10-11-12-13-14-15"></div>
+                    <div class="street-13-14-15-16-17-18"></div>
+                </div>
+                <!-- NUMBER 14 -->
+                <div class="num14 red-field number">
+                    <div class="straight-14"><span>14</span></div>
+                    <div class="split-11-14"></div>
+                    <div class="split-13-14"></div>
+                    <div class="split-14-15"></div>
+                    <div class="split-14-17"></div>
+                    <div class="corner-10-11-13-14"></div>
+                    <div class="corner-11-12-14-15"></div>
+                    <div class="corner-13-14-16-17"></div>
+                    <div class="corner-14-15-17-18"></div>
+                </div>
+                <!-- NUMBER 15 -->
+                <div class="num15 black-field number">
+                    <div class="straight-15"><span>15</span></div>
+                    <div class="split-12-15"></div>
+                    <div class="split-14-15"></div>
+                    <div class="split-15-18"></div>
+                    <div class="line-13-14-15"></div>
+                    <div class="corner-11-12-14-15"></div>
+                    <div class="corner-14-15-17-18"></div>
+                    <div class="street-10-11-12-13-14-15"></div>
+                    <div class="street-13-14-15-16-17-18"></div>
+                </div>
+                <!-- NUMBER 16 -->
+                <div class="num16 red-field number">
+                    <div class="straight-16"><span>16</span></div>
+                    <div class="split-13-16"></div>
+                    <div class="split-16-17"></div>
+                    <div class="split-16-19"></div>
+                    <div class="line-16-17-18"></div>
+                    <div class="corner-13-14-16-17"></div>
+                    <div class="corner-16-17-19-20"></div>
+                    <div class="street-13-14-15-16-17-18"></div>
+                    <div class="street-16-17-18-19-20-21"></div>
+                </div>
+                <!-- NUMBER 17 -->
+                <div class="num17 black-field number">
+                    <div class="straight-17"><span>17</span></div>
+                    <div class="split-14-17"></div>
+                    <div class="split-16-17"></div>
+                    <div class="split-17-18"></div>
+                    <div class="split-17-20"></div>
+                    <div class="corner-13-14-16-17"></div>
+                    <div class="corner-14-15-17-18"></div>
+                    <div class="corner-16-17-19-20"></div>
+                    <div class="corner-17-18-20-21"></div>
+                </div>
+                <!-- NUMBER 18 -->
+                <div class="num18 red-field number">
+                    <div class="straight-18"><span>18</span></div>
+                    <div class="split-15-18"></div>
+                    <div class="split-17-18"></div>
+                    <div class="split-18-21"></div>
+                    <div class="line-16-17-18"></div>
+                    <div class="corner-14-15-17-18"></div>
+                    <div class="corner-17-18-20-21"></div>
+                    <div class="street-13-14-15-16-17-18"></div>
+                    <div class="street-16-17-18-19-20-21"></div>
+                </div>
+                <!-- NUMBER 19 -->
+                <div class="num19 red-field number">
+                    <div class="straight-19"><span>19</span></div>
+                    <div class="split-16-19"></div>
+                    <div class="split-19-20"></div>
+                    <div class="split-19-22"></div>
+                    <div class="line-19-20-21"></div>
+                    <div class="corner-16-17-19-20"></div>
+                    <div class="corner-19-20-22-23"></div>
+                    <div class="street-16-17-18-19-20-21"></div>
+                    <div class="street-19-20-21-22-23-24"></div>
+                </div>
+                <!-- NUMBER 20 -->
+                <div class="num20 black-field number">
+                    <div class="straight-20"><span>20</span></div>
+                    <div class="split-17-20"></div>
+                    <div class="split-19-20"></div>
+                    <div class="split-20-21"></div>
+                    <div class="split-20-23"></div>
+                    <div class="corner-16-17-19-20"></div>
+                    <div class="corner-17-18-20-21"></div>
+                    <div class="corner-19-20-22-23"></div>
+                    <div class="corner-20-21-23-24"></div>
+                </div>
+                <!-- NUMBER 21 -->
+                <div class="num21 red-field number">
+                    <div class="straight-21"><span>21</span></div>
+                    <div class="split-18-21"></div>
+                    <div class="split-20-21"></div>
+                    <div class="split-21-24"></div>
+                    <div class="line-19-20-21"></div>
+                    <div class="corner-17-18-20-21"></div>
+                    <div class="corner-20-21-23-24"></div>
+                    <div class="street-16-17-18-19-20-21"></div>
+                    <div class="street-19-20-21-22-23-24"></div>
+                </div>
+                <!-- NUMBER 22 -->
+                <div class="num22 black-field number">
+                    <div class="straight-22"><span>22</span></div>
+                    <div class="split-19-22"></div>
+                    <div class="split-22-23"></div>
+                    <div class="split-22-25"></div>
+                    <div class="line-22-23-24"></div>
+                    <div class="corner-19-20-22-23"></div>
+                    <div class="corner-22-23-25-26"></div>
+                    <div class="street-19-20-21-22-23-24"></div>
+                    <div class="street-22-23-24-25-26-27"></div>
+                </div>
+                <!-- NUMBER 23 -->
+                <div class="num23 red-field number">
+                    <div class="straight-23"><span>23</span></div>
+                    <div class="split-20-23"></div>
+                    <div class="split-22-23"></div>
+                    <div class="split-23-24"></div>
+                    <div class="split-23-26"></div>
+                    <div class="corner-19-20-22-23"></div>
+                    <div class="corner-20-21-23-24"></div>
+                    <div class="corner-22-23-25-26"></div>
+                    <div class="corner-23-24-26-27"></div>
+                </div>
+                <!-- NUMBER 24 -->
+                <div class="num24 black-field number">
+                    <div class="straight-24"><span>24</span></div>
+                    <div class="split-21-24"></div>
+                    <div class="split-23-24"></div>
+                    <div class="split-24-27"></div>
+                    <div class="line-22-23-24"></div>
+                    <div class="corner-20-21-23-24"></div>
+                    <div class="corner-23-24-26-27"></div>
+                    <div class="street-19-20-21-22-23-24"></div>
+                    <div class="street-22-23-24-25-26-27"></div>
+                </div>
+                <!-- NUMBER 25 -->
+                <div class="num25 red-field number">
+                    <div class="straight-25"><span>25</span></div>
+                    <div class="split-22-25"></div>
+                    <div class="split-25-26"></div>
+                    <div class="split-25-28"></div>
+                    <div class="line-25-26-27"></div>
+                    <div class="corner-22-23-25-26"></div>
+                    <div class="corner-25-26-28-29"></div>
+                    <div class="street-22-23-24-25-26-27"></div>
+                    <div class="street-25-26-27-28-29-30"></div>
+                </div>
+                <!-- NUMBER 26 -->
+                <div class="num26 black-field number">
+                    <div class="straight-26"><span>26</span></div>
+                    <div class="split-23-26"></div>
+                    <div class="split-25-26"></div>
+                    <div class="split-26-27"></div>
+                    <div class="split-26-29"></div>
+                    <div class="corner-22-23-25-26"></div>
+                    <div class="corner-23-24-26-27"></div>
+                    <div class="corner-25-26-28-29"></div>
+                    <div class="corner-26-27-29-30"></div>
+                </div>
+                <!-- NUMBER 27 -->
+                <div class="num27 red-field number">
+                    <div class="straight-27"><span>27</span></div>
+                    <div class="split-24-27"></div>
+                    <div class="split-26-27"></div>
+                    <div class="split-27-30"></div>
+                    <div class="line-25-26-27"></div>
+                    <div class="corner-23-24-26-27"></div>
+                    <div class="corner-26-27-29-30"></div>
+                    <div class="street-22-23-24-25-26-27"></div>
+                    <div class="street-25-26-27-28-29-30"></div>
+                </div>
+                <!-- NUMBER 28 -->
+                <div class="num28 black-field number">
+                    <div class="straight-28"><span>28</span></div>
+                    <div class="split-25-28"></div>
+                    <div class="split-28-29"></div>
+                    <div class="split-28-31"></div>
+                    <div class="line-28-29-30"></div>
+                    <div class="corner-25-26-28-29"></div>
+                    <div class="corner-28-29-31-32"></div>
+                    <div class="street-25-26-27-28-29-30"></div>
+                    <div class="street-28-29-30-31-32-33"></div>
+                </div>
+                <!-- NUMBER 29 -->
+                <div class="num29 black-field number">
+                    <div class="straight-29"><span>29</span></div>
+                    <div class="split-26-29"></div>
+                    <div class="split-28-29"></div>
+                    <div class="split-29-30"></div>
+                    <div class="split-29-32"></div>
+                    <div class="corner-25-26-28-29"></div>
+                    <div class="corner-26-27-29-30"></div>
+                    <div class="corner-28-29-31-32"></div>
+                    <div class="corner-29-30-31-32"></div>
+                </div>
+                <!-- NUMBER 30 -->
+                <div class="num30 red-field number">
+                    <div class="straight-30"><span>30</span></div>
+                    <div class="split-27-30"></div>
+                    <div class="split-29-30"></div>
+                    <div class="split-30-33"></div>
+                    <div class="line-28-29-30"></div>
+                    <div class="corner-26-27-29-30"></div>
+                    <div class="corner-29-30-32-33"></div>
+                    <div class="street-25-26-27-28-29-30"></div>
+                    <div class="street-28-29-30-31-32-33"></div>
+                </div>
+                <!-- NUMBER 31 -->
+                <div class="num31 black-field number">
+                    <div class="straight-31"><span>31</span></div>
+                    <div class="split-28-31"></div>
+                    <div class="split-31-32"></div>
+                    <div class="split-31-34"></div>
+                    <div class="line-31-32-33"></div>
+                    <div class="corner-28-29-31-32"></div>
+                    <div class="corner-31-32-34-35"></div>
+                    <div class="street-28-29-30-31-32-33"></div>
+                    <div class="street-31-32-33-34-35-36"></div>
+                </div>
+                <!-- NUMBER 32 -->
+                <div class="num32 red-field number">
+                    <div class="straight-32"><span>32</span></div>
+                    <div class="split-29-32"></div>
+                    <div class="split-31-32"></div>
+                    <div class="split-32-33"></div>
+                    <div class="split-32-35"></div>
+                    <div class="corner-28-29-31-32"></div>
+                    <div class="corner-29-30-32-33"></div>
+                    <div class="corner-31-32-34-35"></div>
+                    <div class="corner-32-33-35-36"></div>
+                </div>
+                <!-- NUMBER 33 -->
+                <div class="num33 black-field number">
+                    <div class="straight-33"><span>33</span></div>
+                    <div class="split-30-33"></div>
+                    <div class="split-32-33"></div>
+                    <div class="split-33-36"></div>
+                    <div class="line-31-32-33"></div>
+                    <div class="corner-29-30-32-33"></div>
+                    <div class="corner-32-33-35-36"></div>
+                    <div class="street-28-29-30-31-32-33"></div>
+                    <div class="street-31-32-33-34-35-36"></div>
+                </div>
+                <!-- NUMBER 34 -->
+                <div class="num34 red-field number">
+                    <div class="straight-34"><span>34</span></div>
+                    <div class="split-31-34"></div>
+                    <div class="split-34-35"></div>
+                    <div class="line-34-35-36"></div>
+                    <div class="corner-31-32-34-35"></div>
+                    <div class="street-31-32-33-34-35-36"></div>
+                </div>
+                <!-- NUMBER 35 -->
+                <div class="num35 black-field number">
+                    <div class="straight-35"><span>35</span></div>
+                    <div class="split-32-35"></div>
+                    <div class="split-34-35"></div>
+                    <div class="split-35-36"></div>
+                    <div class="line-34-35-36"></div>
+                    <div class="corner-31-32-34-35"></div>
+                    <div class="corner-32-33-35-36"></div>
+                </div>
+                <!-- NUMBER 36 -->
+                <div class="num36 red-field number">
+                    <div class="straight-36"><span>36</span></div>
+                    <div class="split-33-36"></div>
+                    <div class="split-35-36"></div>
+                    <div class="line-34-35-36"></div>
+                    <div class="corner-32-33-35-36"></div>
+                    <div class="street-31-32-33-34-35-36"></div>
+                </div>
+                <!-- FIRST 12 -->
+                <div class="first12 green-field third">
+                    <p>1st 12</p>
+                </div>
+                <!-- SECOND 12 -->
+                <div class="second12 green-field third">
+                    <p>2nd 12</p>
+                </div>
+                <!-- THIRD 12 -->
+                <div class="third12 green-field third">
+                    <p>3rd 12</p>
+                </div>
+                <!-- EVEN NUMBERS -->
+                <div class="even green-field even-odd">
+                    <p>EVEN</p>
+                </div>
+                <!-- ODD NUMBERS -->
+                <div class="odd green-field even-odd">
+                    <p>ODD</p>
+                </div>
+                <!-- BLACK NUMBERS -->
+                <div class="black black-field color"></div>
+                <!-- RED NUMBERS -->
+                <div class="red red-field color"></div>
+                <!-- LOW NUMBERS -->
+                <div class="low green-field half">
+                    <p>1 - 18</p>
+                </div>
+                <!-- HIGH NUMBERS -->
+                <div class="high green-field half">
+                    <p>19 - 36</p>
+                </div>
+                <!-- INFO -->
+                <div class="info">
+                    <input type="button" value="INFO" id="info-btn">
+                    <input type="button" value="RULES" id="rules-btn">
+                </div>
+            </div>
+        </div>
+    
+        <div class="menu green-field" id="menu">
+            <div>
+                <input type="button" value="RESTART" id="restart-btn">
+                <input type="button" value="LOAN" id="loan-btn">
+                <input type="button" value="HISTORY" id="history-btn">
+            </div>
+            <div>
+                <input type="button" value="MAX BET" id="bet-max-btn">
+                <input type="button" value="BET MORE" id="bet-plus-btn">
+                <p id="bet">BET<br><span id="bet-text"><span id="bet-value">0</span></span></p>
+                <input type="button" value="BET LESS" id="bet-minus-btn">
+                <input type="button" value="MIN BET" id="bet-min-btn">
+                <input type="button" value="CUSTOM" id="bet-custom-btn">
+            </div>
+            <div>
+                <p id="balance">BALANCE<br><span id="balance-text"><span id="balance-value">0</span></span></p>
+                <input type="button" value="PAY LOAN" id="pay-loan-btn">
+                <input type="button" value="UNDO BET" id="undo-bet-btn">
+                <input type="button" value="UNDO ALL" id="undo-all-btn">
+            </div>
+            <div>
+                <input type="button" value="SPIN" id="spin">
+            </div>
+        </div>
+        
+        <div id="bets">
+            <div id="bet-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>BET</td>
+                            <td>TYPE</td>
+                            <td>VALUE</td>
+                        </tr>
+                    </thead>
+                    <tbody id="bet-list-body"></tbody>
+                </table>
+            </div>
+            <div id="list-sum">
+                <table>
+                    <tr id="total-bets" class="">
+                        <td>BETS</td>
+                        <td><span id="bets-value">0</span></td>
+                    </tr>
+                    <tr id="list-loan" class="">
+                        <td>LOAN</td>
+                        <td><span id="loan-value">0</span></td>
+                    </tr>
+                    <tr id="list-total">
+                        <td>TOTAL</td>
+                        <td><span id="total-value">0</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="dimmer" class="hidden"></div>
+
+    <div id="spin_wheel" class="window hidden">
+        <div id="spinning-display">
+            <p>STARTING</p>
+        </div>
+        <p id="spin_wheel_message">Wait for spin to finish...</p>
+        <input type="button" value="CLOSE" class="close-button hidden">
+    </div>
+
+    <div id="history-window" class="window hidden">
+        <div id="history">
+            There is no history
+        </div>
+        <input type="button" value="CLOSE" class="close-button">
+    </div>
+
+    <div id="funds-window" class="window hidden">
+        <p>Insuficient funds. You can get a loan to be able to afford this.</p>
+        <div>
+            <input type="button" value="GET A LOAN" class="loan-button">
+            <input type="button" value="CLOSE" class="close-button">
+        </div>
+    </div>
+
+    <div id="loan-window" class="window hidden">
+        <p>Choose your option:</p>
+        <table>
+            <tr>
+                <td>$500.00</td>
+                <td>$50.00 / TURN</td>
+                <td>15 TURNS</td>
+                <td><input type="button" value="TAKE" id="loan-option-1"></td>
+            </tr>
+            <tr>
+                <td>$1,000.00</td>
+                <td>$250.00 / TURN</td>
+                <td>6 TURNS</td>
+                <td><input type="button" value="TAKE" id="loan-option-2"></td>
+            </tr>
+            <tr>
+                <td>$10,000.00</td>
+                <td>$500.00 / TURN</td>
+                <td>22 TURNS</td>
+                <td><input type="button" value="TAKE" id="loan-option-3"></td>
+            </tr>
+            <tr>
+                <td>$25,000.00</td>
+                <td>$1,000.00 / TURN</td>
+                <td>30 TURNS</td>
+                <td><input type="button" value="TAKE" id="loan-option-4"></td>
+            </tr>
+            <tr>
+                <td>$50,000.00</td>
+                <td>$1,500.00 / TURN</td>
+                <td>40 TURNS</td>
+                <td><input type="button" value="TAKE" id="loan-option-5"></td>
+            </tr>
+            <tr>
+                <td>$100,000.00</td>
+                <td>$2,000.00 / TURN</td>
+                <td>55 TURNS</td>
+                <td><input type="button" value="TAKE" id="loan-option-6"></td>
+            </tr>
+        </table>
+        <p id="active-loan-paragraph" class="hidden">There is already an active loan. Pay the loan to be able to select another one. You can wait for the loan to go by itself, or you can pay fully by pressing "PAY THE LOAN" in the menu.</p>
+        <input type="button" value="CLOSE" class="close-button">
+    </div>
+
+    <div id="info-window" class="window hidden">
+        <ul>
+            <li><p>This is a simple roulette game made by Jovan Panic.</p></li>
+            <li><p>Avoid clicking on borders between numbers because a bet will not be placed.</p></li>
+            <li><p>Roulette table is on the left, menu is in between and a list of bets is on the right.</p></li>
+            <li><p>There is an option to get a loan. Each loan option has a value given to a player and a charge rate per turn. The charge rate will be automatically added to a sum of placed bets. For this option, press "LOAN".</p></li>
+            <li><p>You can check out a history of previous winning numbers by pressing "HISTORY".</p></li>
+        </ul>
+        <input type="button" value="CLOSE" class="close-button">
+    </div>
+
+    <script type="module" src="Scripts/eventListeners.js"></script>
+    <script type="module" src="Scripts/start.js"></script>
+</body>
+</html>

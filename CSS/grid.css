@@ -1,0 +1,625 @@
+
+.container {  display: grid;
+  grid-template-columns: 75px 75px 75px 75px 75px;
+  grid-template-rows: 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+  "info info zero zero zero"
+  "low first12 num1 num2 num3"
+  "low first12 num4 num5 num6"
+  "high first12 num7 num8 num9"
+  "high first12 num10 num11 num12"
+  "red second12 num13 num14 num15"
+  "red second12 num16 num17 num18"
+  "black second12 num19 num20 num21"
+  "black second12 num22 num23 num24"
+  "even third12 num25 num26 num27"
+  "even third12 num28 num29 num30"
+  "odd third12 num31 num32 num33"
+  "odd third12 num34 num35 num36";
+  width: 375px;
+}
+
+/*.container > div {
+  border: 1px solid gray;
+}*/
+
+/* ZERO */
+.zero {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 85% 15%;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "straight-zero straight-zero straight-zero"
+    "split-zero-1 split-zero-2 split-zero-3";
+  grid-area: zero;
+}
+.zero > span {
+  pointer-events: none;
+}
+
+.straight-zero { grid-area: straight-zero; }
+.split-zero-1 { grid-area: split-zero-1; }
+.split-zero-2 { grid-area: split-zero-2; }
+.split-zero-3 { grid-area: split-zero-3; }
+.triple-zero-1-2 { grid-area: triple-zero-1-2; }
+.triple-zero-2-3 { grid-area: triple-zero-2-3; }
+
+/* NUMBERS */
+.num1, .num2, .num3, .num4, .num5, .num6, .num7, .num8, .num9, 
+.num10, .num11, .num12, .num13, .num14, .num15, .num16, .num17, .num18, .num19,
+.num20, .num21, .num22, .num23, .num24, .num25, .num26, .num27, .num28, .num29,
+.num30, .num31, .num32, .num33, .num34, .num35, .num36 {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: 15% 70% 15%;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: row;
+}
+
+/* NUMBER 1 */
+.num1 {
+  grid-template-areas:
+  "split-zero-1 split-zero-1 triple-zero-1-2"
+    "line-1-2-3 straight-1 split-1-2"
+    "street-1-2-3-4-5-6 split-1-4 corner-1-2-4-5";
+    grid-area: num1;
+}
+
+.straight-1 { grid-area: straight-1; }
+.split-1-2 { grid-area: split-1-2; }
+.split-1-4 { grid-area: split-1-4; }
+.line-1-2-3 { grid-area: line-1-2-3; }
+.corner-1-2-4-5 { grid-area: corner-1-2-4-5; }
+.street-1-2-3-4-5-6 { grid-area: street-1-2-3-4-5-6; }
+
+/* NUMBER 2 */
+.num2 { 
+  grid-template-areas:
+    "triple-zero-1-2 split-zero-2 triple-zero-2-3"
+    "split-1-2 straight-2 split-2-3"
+    "corner-1-2-4-5 split-2-5 corner-2-3-5-6";
+  grid-area: num2;
+}
+
+.straight-2 { grid-area: straight-2; }
+.split-2-3 { grid-area: split-2-3; }
+.split-2-5 { grid-area: split-2-5; }
+.corner-2-3-5-6 { grid-area: corner-2-3-5-6; }
+
+/* NUMBER 3 */
+.num3 { 
+  grid-template-areas:
+    "triple-zero-2-3 split-zero-3 split-zero-3"
+    "split-2-3 straight-3 line-1-2-3"
+    "corner-2-3-5-6 split-3-6 street-1-2-3-4-5-6";
+  grid-area: num3;
+}
+
+.straight-3 { grid-area: straight-3; }
+.split-3-6 { grid-area: split-3-6; }
+
+/* NUMBER 4 */
+.num4 { 
+  grid-template-areas:
+    "street-1-2-3-4-5-6 split-1-4 corner-1-2-4-5"
+    "line-4-5-6 straight-4 split-4-5"
+    "street-4-5-6-7-8-9 split-4-7 corner-4-5-7-8";
+  grid-area: num4; 
+}
+.straight-4 { grid-area: straight-4; }
+.split-4-5 { grid-area: split-4-5; }
+.split-4-7 { grid-area: split-4-7; }
+.line-4-5-6 { grid-area: line-4-5-6; }
+.corner-4-5-7-8 { grid-area: corner-4-5-7-8; }
+.street-4-5-6-7-8-9 { grid-area: street-4-5-6-7-8-9; }
+
+/* NUMBER 5 */
+.num5 { 
+  grid-template-areas:
+    "corner-1-2-4-5 split-2-5 corner-2-3-5-6"
+    "split-4-5 straight-5 split-5-6"
+    "corner-4-5-7-8 split-5-8 corner-5-6-8-9";
+  grid-area: num5;  
+}
+.straight-5 { grid-area: straight-5; }
+.split-5-6 { grid-area: split-5-6; }
+.split-5-8 { grid-area: split-5-8; }
+.corner-5-6-8-9 { grid-area: corner-5-6-8-9; }
+
+/* NUMBER 6 */
+.num6 { 
+  grid-template-areas:
+    "corner-2-3-5-6 split-3-6 street-1-2-3-4-5-6"
+    "split-5-6 straight-6 line-4-5-6"
+    "corner-5-6-8-9 split-6-9 street-4-5-6-7-8-9";
+  grid-area: num6;
+}
+.straight-6 { grid-area: straight-6; }
+
+/* NUMBER 7 */
+.num7 { 
+  grid-template-areas:
+    "street-4-5-6-7-8-9 split-4-7 corner-4-5-7-8"
+    "line-7-8-9 straight-7 split-7-8"
+    "street-7-8-9-10-11-12 split-7-10 corner-7-8-10-11";
+  grid-area: num7; 
+}
+.straight-7 { grid-area: straight-7; }
+.split-7-8 { grid-area: split-7-8; }
+.split-7-10 { grid-area: split-7-10; }
+.line-7-8-9 { grid-area: line-7-8-9; }
+.corner-7-8-10-11 { grid-area: corner-7-8-10-11; }
+.street-7-8-9-10-11-12 { grid-area: street-7-8-9-10-11-12; }
+
+/* NUMBER 8 */
+.num8 {
+  grid-template-areas:
+    "corner-4-5-7-8 split-5-8 corner-5-6-8-9"
+    "split-7-8 straight-8 split-8-9"
+    "corner-7-8-10-11 split-8-11 corner-8-9-11-12";
+  grid-area: num8;
+}
+.straight-8 { grid-area: straight-8; }
+.split-8-9 { grid-area: split-8-9; }
+.split-8-11 { grid-area: split-8-11; }
+.corner-8-9-11-12 { grid-area: corner-8-9-11-12; }
+
+/* NUMBER 9 */
+.num9 {
+  grid-template-areas:
+    "corner-5-6-8-9 split-6-9 street-4-5-6-7-8-9"
+    "split-8-9 straight-9 line-7-8-9"
+    "corner-8-9-11-12 split-9-12 street-7-8-9-10-11-12";
+  grid-area: num9; 
+}
+.straight-9 { grid-area: straight-9; }
+.split-9-12 { grid-area: split-9-12; }
+
+/* NUMBER 10 */
+.num10 {
+  grid-template-areas:
+    "street-7-8-9-10-11-12 split-7-10 corner-7-8-10-11"
+    "line-10-11-12 straight-10 split-10-11"
+    "street-10-11-12-13-14-15 split-10-13 corner-10-11-13-14";
+  grid-area: num10;
+}
+.straight-10 { grid-area: straight-10; }
+.split-10-11 { grid-area: split-10-11; }
+.split-10-13 { grid-area: split-10-13; }
+.line-10-11-12 { grid-area: line-10-11-12; }
+.corner-10-11-13-14 { grid-area: corner-10-11-13-14; }
+.street-10-11-12-13-14-15 { grid-area: street-10-11-12-13-14-15; }
+
+/* NUMBER 11 */
+.num11 {
+  grid-template-areas:
+    "corner-7-8-10-11 split-8-11 corner-8-9-11-12"
+    "split-10-11 straight-11 split-11-12"
+    "corner-10-11-13-14 split-11-14 corner-11-12-14-15";
+  grid-area: num11;
+}
+.straight-11 { grid-area: straight-11; }
+.split-11-12 { grid-area: split-11-12; }
+.split-11-14 { grid-area: split-11-14; }
+.corner-11-12-14-15 { grid-area: corner-11-12-14-15; }
+
+/* NUMBER 12 */
+.num12 {
+  grid-template-areas:
+    "corner-8-9-11-12 split-9-12 street-7-8-9-10-11-12"
+    "split-11-12 straight-12 line-10-11-12"
+    "corner-11-12-14-15 split-12-15 street-10-11-12-13-14-15";
+  grid-area: num12;
+}
+.straight-12 { grid-area: straight-12; }
+.split-12-15 { grid-area: split-12-15; }
+
+/* NUMBER 13 */
+.num13 {
+  grid-template-areas:
+    "street-10-11-12-13-14-15 split-10-13 corner-10-11-13-14"
+    "line-13-14-15 straight-13 split-13-14"
+    "street-13-14-15-16-17-18 split-13-16 corner-13-14-16-17";
+  grid-area: num13;
+}
+.straight-13 { grid-area: straight-13; }
+.split-13-14 { grid-area: split-13-14; }
+.split-13-16 { grid-area: split-13-16; }
+.line-13-14-15 { grid-area: line-13-14-15; }
+.corner-13-14-16-17 { grid-area: corner-13-14-16-17; }
+.street-13-14-15-16-17-18 { grid-area: street-13-14-15-16-17-18; }
+
+/* NUMBER 14 */
+.num14 {
+  grid-template-areas:
+    "corner-10-11-13-14 split-11-14 corner-11-12-14-15"
+    "split-13-14 straight-14 split-14-15"
+    "corner-13-14-16-17 split-14-17 corner-14-15-17-18";
+  grid-area: num14;
+}
+.straight-14 { grid-area: straight-14; }
+.split-14-15 { grid-area: split-14-15; }
+.split-14-17 { grid-area: split-14-17; }
+.corner-14-15-17-18 { grid-area: corner-14-15-17-18; }
+
+/* NUMBER 15 */
+.num15 {
+  grid-template-areas:
+    "corner-11-12-14-15 split-12-15 street-10-11-12-13-14-15"
+    "split-14-15 straight-15 line-13-14-15"
+    "corner-14-15-17-18 split-15-18 street-13-14-15-16-17-18";
+  grid-area: num15;
+}
+.straight-15 { grid-area: straight-15; }
+.split-15-18 { grid-area: split-15-18; }
+
+/* NUMBER 16 */
+.num16 {
+  grid-template-areas:
+    "street-13-14-15-16-17-18 split-13-16 corner-13-14-16-17"
+    "line-16-17-18 straight-16 split-16-17"
+    "street-16-17-18-19-20-21 split-16-19 corner-16-17-19-20";
+  grid-area: num16;
+}
+.straight-16 { grid-area: straight-16; }
+.split-16-17 { grid-area: split-16-17; }
+.split-16-19 { grid-area: split-16-19; }
+.line-16-17-18 { grid-area: line-16-17-18; }
+.corner-16-17-19-20 { grid-area: corner-16-17-19-20; }
+.street-16-17-18-19-20-21 { grid-area: street-16-17-18-19-20-21; }
+
+/* NUMBER 17 */
+.num17 {
+  grid-template-areas:
+    "corner-13-14-16-17 split-14-17 corner-14-15-17-18"
+    "split-16-17 straight-17 split-17-18"
+    "corner-16-17-19-20 split-17-20 corner-17-18-20-21";
+  grid-area: num17;
+}
+.straight-17 { grid-area: straight-17; }
+.split-17-18 { grid-area: split-17-18; }
+.split-17-20 { grid-area: split-17-20; }
+.corner-17-18-20-21 { grid-area: corner-17-18-20-21; }
+
+/* NUMBER 18 */
+.num18 {
+  grid-template-areas:
+    "corner-14-15-17-18 split-15-18 street-13-14-15-16-17-18"
+    "split-17-18 straight-18 line-16-17-18"
+    "corner-17-18-20-21 split-18-21 street-16-17-18-19-20-21";
+  grid-area: num18;
+}
+.straight-18 { grid-area: straight-18; }
+.split-18-21 { grid-area: split-18-21; }
+
+/* NUMBER 19 */
+.num19 {
+  grid-template-areas:
+    "street-16-17-18-19-20-21 split-16-19 corner-16-17-19-20"
+    "line-19-20-21 straight-19 split-19-20"
+    "street-19-20-21-22-23-24 split-19-22 corner-19-20-22-23";
+  grid-area: num19;
+}
+.straight-19 { grid-area: straight-19; }
+.split-19-20 { grid-area: split-19-20; }
+.split-19-22 { grid-area: split-19-22; }
+.line-19-20-21 { grid-area: line-19-20-21; }
+.corner-19-20-22-23 { grid-area: corner-19-20-22-23; }
+.street-19-20-21-22-23-24 { grid-area: street-19-20-21-22-23-24; }
+
+/* NUMBER 20 */
+.num20 {
+  grid-template-areas:
+    "corner-16-17-19-20 split-17-20 corner-17-18-20-21"
+    "split-19-20 straight-20 split-20-21"
+    "corner-19-20-22-23 split-20-23 corner-20-21-23-24";
+  grid-area: num20;
+}
+.straight-20 { grid-area: straight-20; }
+.split-20-21 { grid-area: split-20-21; }
+.split-20-23 { grid-area: split-20-23; }
+.corner-20-21-23-24 { grid-area: corner-20-21-23-24; }
+
+/* NUMBER 21 */
+.num21 {
+  grid-template-areas:
+    "corner-17-18-20-21 split-18-21 street-16-17-18-19-20-21"
+    "split-20-21 straight-21 line-19-20-21"
+    "corner-20-21-23-24 split-21-24 street-19-20-21-22-23-24";
+  grid-area: num21;
+}
+.straight-21 { grid-area: straight-21; }
+.split-21-24 { grid-area: split-21-24; }
+
+/* NUMBER 22 */
+.num22 {
+  grid-template-areas:
+    "street-19-20-21-22-23-24 split-19-22 corner-19-20-22-23"
+    "line-22-23-24 straight-22 split-22-23"
+    "street-22-23-24-25-26-27 split-22-25 corner-22-23-25-26";
+  grid-area: num22;
+}
+.straight-22 { grid-area: straight-22; }
+.split-22-23 { grid-area: split-22-23; }
+.split-22-25 { grid-area: split-22-25; }
+.line-22-23-24 { grid-area: line-22-23-24; }
+.corner-22-23-25-26 { grid-area: corner-22-23-25-26; }
+.street-22-23-24-25-26-27 { grid-area: street-22-23-24-25-26-27; }
+
+/* NUMBER 23 */
+.num23 {
+  grid-template-areas:
+    "corner-19-20-22-23 split-20-23 corner-20-21-23-24"
+    "split-22-23 straight-23 split-23-24"
+    "corner-22-23-25-26 split-23-26 corner-23-24-26-27";
+  grid-area: num23;
+}
+.straight-23 { grid-area: straight-23; }
+.split-23-24 { grid-area: split-23-24; }
+.split-23-26 { grid-area: split-23-26; }
+.corner-23-24-26-27 { grid-area: corner-23-24-26-27; }
+
+/* NUMBER 24 */
+.num24 {
+  grid-template-areas:
+    "corner-20-21-23-24 split-21-24 street-19-20-21-22-23-24"
+    "split-23-24 straight-24 line-22-23-24"
+    "corner-23-24-26-27 split-24-27 street-22-23-24-25-26-27";
+  grid-area: num24;
+}
+.straight-24 { grid-area: straight-24; }
+.split-24-27 { grid-area: split-24-27; }
+
+/* NUMBER 25 */
+.num25 {
+  grid-template-areas:
+    "street-22-23-24-25-26-27 split-22-25 corner-22-23-25-26"
+    "line-25-26-27 straight-25 split-25-26"
+    "street-25-26-27-28-29-30 split-25-28 corner-25-26-28-29";
+  grid-area: num25;
+}
+.straight-25 { grid-area: straight-25; }
+.split-25-26 { grid-area: split-25-26; }
+.split-25-28 { grid-area: split-25-28; }
+.line-25-26-27 { grid-area: line-25-26-27; }
+.corner-25-26-28-29 { grid-area: corner-25-26-28-29; }
+.street-25-26-27-28-29-30 { grid-area: street-25-26-27-28-29-30; }
+
+/* NUMBER 26 */
+.num26 {
+  grid-template-areas:
+    "corner-22-23-25-26 split-23-26 corner-23-24-26-27"
+    "split-25-26 straight-26 split-26-27"
+    "corner-25-26-28-29 split-26-29 corner-26-27-29-30";
+  grid-area: num26;
+}
+.straight-26 { grid-area: straight-26; }
+.split-26-27 { grid-area: split-26-27; }
+.split-26-29 { grid-area: split-26-29; }
+.corner-26-27-29-30 { grid-area: corner-26-27-29-30; }
+
+/* NUMBER 27 */
+.num27 {
+  grid-template-areas:
+    "corner-23-24-26-27 split-24-27 street-22-23-24-25-26-27"
+    "split-26-27 straight-27 line-25-26-27"
+    "corner-26-27-29-30 split-27-30 street-25-26-27-28-29-30";
+  grid-area: num27;
+}
+.straight-27 { grid-area: straight-27; }
+.split-27-30 { grid-area: split-27-30; }
+
+/* NUMBER 28 */
+.num28 {
+  grid-template-areas:
+    "street-25-26-27-28-29-30 split-25-28 corner-25-26-28-29"
+    "line-28-29-30 straight-28 split-28-29"
+    "street-28-29-30-31-32-33 split-28-31 corner-28-29-31-32";
+  grid-area: num28;
+}
+.straight-28 { grid-area: straight-28; }
+.split-28-29 { grid-area: split-28-29; }
+.split-28-31 { grid-area: split-28-31; }
+.line-28-29-30 { grid-area: line-28-29-30; }
+.corner-28-29-31-32 { grid-area: corner-28-29-31-32; }
+.street-28-29-30-31-32-33 { grid-area: street-28-29-30-31-32-33; }
+
+/* NUMBER 29 */
+.num29 {
+  grid-template-areas:
+    "corner-25-26-28-29 split-26-29 corner-26-27-29-30"
+    "split-28-29 straight-29 split-29-30"
+    "corner-28-29-31-32 split-29-32 corner-29-30-32-33";
+  grid-area: num29;
+}
+.straight-29 { grid-area: straight-29; }
+.split-29-30 { grid-area: split-29-30; }
+.split-29-32 { grid-area: split-29-32; }
+.corner-29-30-32-33 { grid-area: corner-29-30-32-33; }
+
+/* NUMBER 30 */
+.num30 {
+  grid-template-areas:
+    "corner-26-27-29-30 split-27-30 street-25-26-27-28-29-30"
+    "split-29-30 straight-30 line-28-29-30"
+    "corner-29-30-32-33 split-30-33 street-28-29-30-31-32-33";
+  grid-area: num30;
+}
+.straight-30 { grid-area: straight-30; }
+.split-30-33 { grid-area: split-30-33; }
+
+/* NUMBER 31 */
+.num31 {
+  grid-template-areas:
+    "street-28-29-30-31-32-33 split-28-31 corner-28-29-31-32"
+    "line-31-32-33 straight-31 split-31-32"
+    "street-31-32-33-34-35-36 split-31-34 corner-31-32-34-35";
+  grid-area: num31;
+}
+.straight-31 { grid-area: straight-31; }
+.split-31-32 { grid-area: split-31-32; }
+.split-31-34 { grid-area: split-31-34; }
+.line-31-32-33 { grid-area: line-31-32-33; }
+.corner-31-32-34-35 { grid-area: corner-31-32-34-35; }
+.street-31-32-33-34-35-36 { grid-area: street-31-32-33-34-35-36; }
+
+/* NUMBER 32 */
+.num32 {
+  grid-template-areas:
+    "corner-28-29-31-32 split-29-32 corner-29-30-32-33"
+    "split-31-32 straight-32 split-32-33"
+    "corner-31-32-34-35 split-32-35 corner-32-33-35-36";
+  grid-area: num32;
+}
+.straight-32 { grid-area: straight-32; }
+.split-32-33 { grid-area: split-32-33; }
+.split-32-35 { grid-area: split-32-35; }
+.corner-32-33-35-36 { grid-area: corner-32-33-35-36; }
+
+/* NUMBER 33 */
+.num33 {
+  grid-template-areas:
+    "corner-29-30-32-33 split-30-33 street-28-29-30-31-32-33"
+    "split-32-33 straight-33 line-31-32-33"
+    "corner-32-33-35-36 split-33-36 street-31-32-33-34-35-36";
+  grid-area: num33;
+}
+.straight-33 { grid-area: straight-33; }
+.split-33-36 { grid-area: split-33-36; }
+
+/* NUMBER 34 */
+.num34 {
+  grid-template-areas:
+    "street-31-32-33-34-35-36 split-31-34 corner-31-32-34-35"
+    "line-34-35-36 straight-34 split-34-35"
+    "line-34-35-36 straight-34 split-34-35";
+  grid-area: num34;
+}
+.straight-34 { grid-area: straight-34; }
+.split-34-35 { grid-area: split-34-35; }
+.line-34-35-36 { grid-area: line-34-35-36; }
+
+/* NUMBER 35 */
+.num35 {
+  grid-template-areas:
+    "corner-31-32-34-35 split-32-35 corner-32-33-35-36"
+    "split-34-35 straight-35 split-35-36"
+    "split-34-35 straight-35 split-35-36";
+  grid-area: num35;
+}
+.straight-35 { grid-area: straight-35; }
+.split-35-36 { grid-area: split-35-36; }
+
+/* NUMBER 36 */
+.num36 { 
+  grid-template-areas:
+    "corner-32-33-35-36 split-33-36 street-31-32-33-34-35-36"
+    "split-35-36 straight-36 line-34-35-36"
+    "split-35-36 straight-36 line-34-35-36";
+  grid-area: num36;  
+}
+.straight-36 { grid-area: straight-36; }
+
+/* THIRDS */
+.first12, .second12, .third12 {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+/* FIRST THIRD */
+.first12 { 
+  grid-template-areas:
+    ". ."
+    ". ."
+    ". ."
+    ". .";
+  grid-area: first12;
+}
+
+/* SECOND THIRD */
+.second12 { 
+  grid-template-areas:
+    ". ."
+    ". ."
+    ". ."
+    ". .";
+  grid-area: second12;
+}
+
+/* THIRD THIRD */
+.third12 { 
+  grid-template-areas:
+    ". ."
+    ". ."
+    ". ."
+    ". .";
+  grid-area: third12;
+}
+
+/* EVEN NUMBERS */
+.even { grid-area: even; }
+
+/* ODD NUMBERS */
+.odd { grid-area: odd; }
+
+/* BLACK NUMBERS */
+.black { grid-area: black; }
+
+/* RED NUMBERS */
+.red { grid-area: red; }
+
+/* LOW NUMBERS */
+.low { grid-area: low; }
+
+/* HIGH NUMBERS */
+.high { grid-area: high; }
+
+.info { grid-area: info; }
+
+.red-field > [class*="split"] {
+  border-collapse: collapse;
+  border: 1px var(--color-yellow) dashed;
+}
+
+.black-field > [class*="split"] {
+  border-collapse: collapse;
+  border: 1px gray dashed;
+}
+
+.red-field > [class*="line"] {
+  border-collapse: collapse;
+  border: 1px var(--color-yellow) dashed;
+}
+
+.black-field > [class*="line"] {
+  border-collapse: collapse;
+  border: 1px gray dashed;
+}
+
+.red-field > [class*="corner"] {
+  border-collapse: collapse;
+  border: 1px var(--color-yellow) solid;
+}
+
+.black-field > [class*="corner"] {
+  border-collapse: collapse;
+  border: 1px gray solid;
+}
+
+.red-field > [class*="street"] {
+  border-collapse: collapse;
+  border: 1px var(--color-yellow) solid;
+}
+
+.black-field > [class*="street"] {
+  border-collapse: collapse;
+  border: 1px gray solid;
+}

@@ -1,0 +1,114 @@
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 125px;
+    height: 675px;
+    margin-top: 20px;
+    padding: 25px 0;
+    background-color: var(--color-brown);
+    background-image: url('../Sources/Patterns/leather.png');
+    background-size: 100%;
+    background-repeat: repeat;
+    color: var(--color-white);
+    border: 1px solid gray;
+    box-shadow: inset 0px 0px 5px 1px var(--color-brown);
+}
+
+.menu div {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    background-color: var(--color-green);
+    background-size: contain;
+    background-repeat: repeat;
+    color: var(--color-yellow);
+    border: 1px solid gray;
+    box-shadow: 0px 0px 5px 0px var(--color-black);
+    border: none;
+    border-radius: 10px;
+    margin: 5px 15%;
+    width: 70%;
+    height: 20px;
+    font-weight: bold;
+}
+
+.menu p {
+    color: var(--color-white);
+    font-weight: bold;
+    text-shadow: 0 0 3px black;
+}
+
+#bet {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#bet-text {
+    color: var(--color-light-green);
+}
+
+#balance {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#balance-text {
+    color: var(--color-light-green);
+}
+
+/* GREEN BUTTONS */
+#spin {
+    height: 35px;
+    font-size: larger;
+}
+
+input:hover, #spin:hover {
+    cursor: pointer;
+    background-color: var(--color-green-hover);
+}
+
+/* YELLOW BUTTONS */
+#history-btn, #bet-custom-btn {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-green);
+    
+}
+
+#undo-bet-btn {
+    background-color: var(--color-yellow);
+    color: var(--color-dark-red);
+}
+
+#history-btn:hover, #bet-custom-btn:hover, #undo-bet-btn:hover {
+    cursor: pointer;
+    background-color: var(--color-yellow-hover);
+}
+
+/* RED BUTTONS */
+#restart-btn, #bet-min-btn, #bet-minus-btn {
+    background-color: var(--color-dark-red);
+}
+
+#restart-btn:hover, #bet-min-btn:hover, #bet-minus-btn:hover {
+    cursor: pointer;
+    background-color: var(--color-red-hover);
+}
+
+#undo-all-btn {
+    background-color: var(--color-dark-red);
+}
+
+#undo-all-btn:hover {
+    background-color: var(--color-red-hover);
+}

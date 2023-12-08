@@ -1,0 +1,79 @@
+
+.green-field {
+    background-color: var(--color-green);
+    background-image: url('../Sources/Patterns/green.png');
+    background-size: contain;
+    background-repeat: repeat;
+    color: var(--color-yellow);
+    border: 1px solid gray;
+    box-shadow: inset 0px 0px 2px 0px var(--color-black);
+}
+
+.red-field {
+    background-color: var(--color-red);
+    background-image: url('../Sources/Patterns/red.png');
+    background-size: contain;
+    background-repeat: repeat;
+    color: var(--color-white);
+    border: 1px solid gray;
+    box-shadow: inset 0px 0px 2px 0px var(--color-black);
+}
+
+.black-field {
+    background-color: var(--color-black);
+    background-image: url('../Sources/Patterns/black.png');
+    background-size: contain;
+    background-repeat: repeat;
+    color: var(--color-white);
+    border: 1px solid gray;
+    box-shadow: inset 0px 0px 2px 0px var(--color-black);
+}
+
+[class*="straight-"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    color: var(--color-white);
+    text-shadow: 0px 0px 3px var(--color-black);
+}
+
+.first12, .second12, .third12, .odd, .even, .red, .black, .low, .high {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-lr;
+    font-size: x-large;
+    text-shadow: 0px 0px 3px var(--color-black);
+}
+
+.low {
+    border-top-left-radius: 15px;
+}
+
+.odd {
+    border-bottom-left-radius: 15px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info > input {
+    margin: 0;
+    align-items: center;
+    background-color: var(--color-dark-green);
+    color: var(--color-yellow);
+}
+
+/*@media only screen and (min-width: 720px) {
+    .container {
+      transform: rotate(-90deg);
+    }
+    [class*="straight-"]{
+        transform: rotate(90deg);
+    }
+}*/
