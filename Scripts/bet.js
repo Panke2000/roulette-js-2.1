@@ -285,7 +285,7 @@ function undoBet() {
     if (placedBets.length === 1) {
         placedBets.pop();
         betHistory.pop();
-        sum = loan.chargeValue;
+        sum = 0;
         updateList();
         LOG_printArrays();
         return;
@@ -312,7 +312,7 @@ function undoAll() {
     LOG_triggered('undoAll()');
     placedBets = [];
     betHistory = [];
-    sum = loan.chargeValue;
+    sum = 0;
     LOG_printArrays();
     console.log(sum);
     updateList();

@@ -1,5 +1,5 @@
 export { loan, getALoan, clearLoan };
-import { balance } from "./balance.js";
+import { balance, addValue, subtractValue } from "./balance.js";
 import { updateList } from "./bet.js";
 
 let loan = {
@@ -12,6 +12,8 @@ function setLoan(chargeValue, chargeRate) {
     loan.active = true;
     loan.chargeValue = chargeValue;
     loan.chargeRate = chargeRate;
+    document.querySelector('#total-bets').classList.toggle('hidden');
+    document.querySelector('#list-loan').classList.toggle('hidden');
 }
 
 function menuToggler() {
@@ -28,6 +30,8 @@ function clearLoan() {
     loan.active = false;
     loan.chargeValue = 0;
     loan.chargeRate = 0;
+    document.querySelector('#total-bets').classList.toggle('hidden');
+    document.querySelector('#list-loan').classList.toggle('hidden');
     menuToggler();
 }
 
@@ -35,31 +39,37 @@ function getALoan(option) {
     switch (option) {
         case 1:
             setLoan(50, 15);
+            addValue(500);
             updateList();
             menuToggler();
             break;
         case 2:
             setLoan(250, 6);
+            addValue(1000);
             updateList();
             menuToggler();
             break;
         case 3:
             setLoan(500, 22);
+            addValue(10000);
             updateList();
             menuToggler();
             break;
         case 4:
             setLoan(1000, 30);
+            addValue(25000);
             updateList();
             menuToggler();
             break;
         case 5:
             setLoan(1500, 40);
+            addValue(50000);
             updateList();
             menuToggler();
             break;
         case 6:
             setLoan(2000, 55);
+            addValue(100000);
             updateList();
             menuToggler();
             break;
