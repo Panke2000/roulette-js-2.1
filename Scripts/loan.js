@@ -1,5 +1,6 @@
 export { loan, getALoan, clearLoan };
 import { balance } from "./balance.js";
+import { updateList } from "./bet.js";
 
 let loan = {
     active: false,
@@ -13,53 +14,54 @@ function setLoan(chargeValue, chargeRate) {
     loan.chargeRate = chargeRate;
 }
 
-function menuToggler(state) {
-    const PARAGRAPH = document.querySelector('#loan-window p');
-    const TABLE = document.querySelector('#loan-window table');
-    const ACTIVE_LOAN = document.querySelector('#active-loan-paragraph');
-    if (state === true) {
-        PARAGRAPH.classList.remove('hidden');
-        TABLE.classList.remove('hidden');
-        ACTIVE_LOAN.classList.add('hidden');
-    } else {
-        PARAGRAPH.classList.add('hidden');
-        TABLE.classList.add('hidden');
-        ACTIVE_LOAN.classList.remove('hidden');
+function menuToggler() {
+    if (loan.active === true) {
+        document.querySelector('#loan-window').classList.toggle('hidden');
+        document.querySelector('#dimmer').classList.toggle('hidden');
     }
+    document.querySelector('#loan-window p').classList.toggle('hidden');
+    document.querySelector('#loan-window table').classList.toggle('hidden');
+    document.querySelector('#active-loan-paragraph').classList.toggle('hidden');
 }
 
 function clearLoan() {
     loan.active = false;
     loan.chargeValue = 0;
     loan.chargeRate = 0;
-    menuToggler(false);
+    menuToggler();
 }
 
 function getALoan(option) {
     switch (option) {
         case 1:
             setLoan(50, 15);
-            menuToggler(true);
+            updateList();
+            menuToggler();
             break;
         case 2:
             setLoan(250, 6);
-            menuToggler(true);
+            updateList();
+            menuToggler();
             break;
         case 3:
             setLoan(500, 22);
-            menuToggler(true);
+            updateList();
+            menuToggler();
             break;
         case 4:
             setLoan(1000, 30);
-            menuToggler(true);
+            updateList();
+            menuToggler();
             break;
         case 5:
             setLoan(1500, 40);
-            menuToggler(true);
+            updateList();
+            menuToggler();
             break;
         case 6:
             setLoan(2000, 55);
-            menuToggler(true);
+            updateList();
+            menuToggler();
             break;
     
         default:

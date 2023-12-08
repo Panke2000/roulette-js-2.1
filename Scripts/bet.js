@@ -1,10 +1,10 @@
-export { placedBets, sum, betHistory, placeBet, undoBet, undoAll, updateBetValue, changeBetValue, betMore, betMax, betLess, betMin }
+export { placedBets, sum, betHistory, placeBet, undoBet, undoAll, updateList, updateBetValue, clearList, changeBetValue, betMore, betMax, betLess, betMin }
 import { loan } from "./loan.js";
 import { balance } from "./balance.js";
 import { numbers } from "./numbers.js";
 let placedBets = [];
 let sum = 0; // default: 0; Value changes when there is an active loan.
-let totalSum = loan.chargeValue;
+let totalSum;
 let betHistory = [];
 let currentBetValue = 5;
 
@@ -135,9 +135,6 @@ function clearList() {
 function updateList() {
     clearList();
     const LIST = document.querySelector('#bet-list-body');
-    const BETS_VALUE = document.querySelector('#bets-value');
-    const LOAN_VALUE = document.querySelector('#loan-value');
-    const TOTAL = document.querySelector('#total-value');
     placedBets.forEach(element => {
         let row = LIST.insertRow(-1);
         let cell1 = row.insertCell(-1);
@@ -147,9 +144,9 @@ function updateList() {
         cell2.innerHTML = element.betType;
         cell3.innerHTML = convertToCurrency(element.betValue);
     });
-    BETS_VALUE.innerHTML = convertToCurrency(sum);
-    LOAN_VALUE.innerHTML = convertToCurrency(loan.chargeValue);
-    TOTAL.innerHTML = convertToCurrency(sum + loan.chargeValue);
+    document.querySelector('#bets-value').innerHTML = convertToCurrency(sum);
+    document.querySelector('#loan-value').innerHTML = convertToCurrency(loan.chargeValue);
+    document.querySelector('#total-value').innerHTML = convertToCurrency(sum + loan.chargeValue);
 }
 
 function placeBet_other(bet) {
@@ -240,6 +237,8 @@ function placeBet_numbers(bet) {
             betType: betType,
             expectedNumbers: expectedNumbers
         });
+        sum += bet_info.betValue;
+        totalSum = sum + loan.chargeValue;
     } else {
 
         let found = false;

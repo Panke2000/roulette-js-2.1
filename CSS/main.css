@@ -209,7 +209,7 @@ body {
 #loan-window {
     max-width: 600px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 50px;
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -238,7 +238,9 @@ body {
 }
 
 #loan-window input[type="button"] {
-    background-color: #4CAF50;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
     color: white;
     border: none;
     border-radius: 4px;
@@ -246,7 +248,9 @@ body {
 }
 
 #loan-window input[type="button"]:hover {
-    background-color: #45a049;
+    background-color: none;
+    background-image: none;
+    color: var(--color-yellow);
 }
 
 .loan-button {
