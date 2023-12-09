@@ -38,8 +38,8 @@ function LOG_printArrays() {
     console.log(betHistory);
 }
 
-function LOG_triggered(name) {
-    console.log(name + ' triggered');
+function LOG_triggered(name, args) {
+    console.log(name + ' triggered with: ' + args);
 }
 
 function betMore() {
@@ -110,7 +110,7 @@ function betMin() {
 
 
 function getBetType_other(bet) {
-    LOG_triggered('getBetType_other()');
+    LOG_triggered('getBetType_other()', bet);
     switch (bet) {
         case 'first12': case 'second12': case 'third12':
             return 'THIRD';
@@ -127,7 +127,7 @@ function getBetType_other(bet) {
 }
 
 function getBetType_numbers(bet) {
-    LOG_triggered('getBetType_numbers()');
+    LOG_triggered('getBetType_numbers()', bet);
     const BET = bet.split('-')[0];
     return BET.toUpperCase();
 }
@@ -137,7 +137,7 @@ function getBetName_other(bet) {
 }
 
 function getBetName_numbers(bet) {
-    LOG_triggered('getBetType_numbers()');
+    LOG_triggered('getBetType_numbers()', bet);
     let betArray = bet.split('-');
 
     //in case the bet name includes zero
@@ -187,7 +187,7 @@ function updateList() {
 }
 
 function placeBet_other(bet) {
-    LOG_triggered('placeBet_other()');
+    LOG_triggered('placeBet_other()', bet);
     let betName = bet;
     let betType = getBetType_other(bet);
 
@@ -239,7 +239,7 @@ function format(bet) {
 }
 
 function placeBet_numbers(bet) {
-    LOG_triggered('placeBet_numbers()');
+    LOG_triggered('placeBet_numbers()', bet);
     let betName = bet;
     bet = format(bet);
     let betType;
@@ -317,7 +317,7 @@ function placeBet(bet) {
 }
 
 function undoBet() {
-    LOG_triggered('undoBet()');
+    LOG_triggered('undoBet()', 'empty');
     if (betHistory.length === 0) {
         return;
     }
@@ -349,7 +349,7 @@ function undoBet() {
 }
 
 function undoAll() {
-    LOG_triggered('undoAll()');
+    LOG_triggered('undoAll()', 'empty');
     placedBets = [];
     betHistory = [];
     sum = 0;
