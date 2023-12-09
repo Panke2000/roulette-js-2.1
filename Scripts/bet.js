@@ -9,10 +9,7 @@ let betHistory = [];
 let currentBetValue = 5;
 
 function checkFunds(value) {
-    if (value < balance) {
-        return false;
-    }
-    return true;
+    return value >= balance;
 }
 
 function convertToCurrency(value) {
@@ -112,16 +109,56 @@ function betMin() {
 }
 
 
-function getBetType(bet) {
+function getBetType_other(bet) {
+    LOG_triggered('getBetType_other()');
     switch (bet) {
         case 'first12': case 'second12': case 'third12':
-            return 'third';
+            return 'THIRD';
         case 'red': case 'black':
-            return 'color';
+            return 'COLOR';
         case 'low': case 'high':
-            return 'half';
+            return 'HALF';
         case 'even': case 'odd':
-            return 'even-odd';
+            return 'EVEN-ODD';
+    
+        default:
+            break;
+    }
+}
+
+function getBetType_numbers(bet) {
+    LOG_triggered('getBetType_numbers()');
+    const BET = bet.split('-')[0];
+    return BET.toUpperCase();
+}
+
+function getBetName_other(bet) {
+    return;
+}
+
+function getBetName_numbers(bet) {
+    LOG_triggered('getBetType_numbers()');
+    let betArray = bet.split('-');
+
+    //in case the bet name includes zero
+    if (betArray.includes('zero')) {
+        let zeroIndex = betArray.indexOf('zero');
+        betArray[zeroIndex] = '0';
+    }
+
+    switch (betArray[0]) {
+        case 'straight':
+            return 'NUMBER ' + betArray[1];
+        case 'split':
+            return 'SPLIT ' + betArray[1] + '-' + betArray[2];
+        case 'line':
+            return 'LINE ' + betArray[1] + '-' + betArray[2] + '-' + betArray[3];
+        case 'triple':
+            return 'TRIPLE ' + betArray[1] + '-' + betArray[2] + '-' + betArray[3];
+        case 'corner':
+            return 'CORNER ' + betArray[1] + '-' + betArray[2] + '-' + betArray[3] + '-' + betArray[4];
+        case 'street':
+            return 'STREET ' + betArray[1] + '-' + betArray[2] + '-' + betArray[3] + '-' + betArray[4] + '-' + betArray[5];
     
         default:
             break;
@@ -140,8 +177,8 @@ function updateList() {
         let cell1 = row.insertCell(-1);
         let cell2 =  row.insertCell(-1);
         let cell3 =  row.insertCell(-1);
-        cell1.innerHTML = element.betName;
-        cell2.innerHTML = element.betType;
+        cell1.innerHTML = getBetName_numbers(element.betName);
+        cell2.innerHTML = getBetType_numbers(element.betType);
         cell3.innerHTML = convertToCurrency(element.betValue);
     });
     document.querySelector('#bets-value').innerHTML = convertToCurrency(sum);
@@ -152,9 +189,9 @@ function updateList() {
 function placeBet_other(bet) {
     LOG_triggered('placeBet_other()');
     let betName = bet;
-    let betType = getBetType(bet);
+    let betType = getBetType_other(bet);
 
-    //check if border was pressed
+    //checks if border was pressed
     if(betType === undefined){
         console.log('Border pressed!');
         return;
@@ -212,6 +249,9 @@ function placeBet_numbers(bet) {
         if (i === 0) {
             betType = bet[i];
         } else {
+            if (bet[i] === 'zero') {
+                bet[i] = '0';
+            }
             expectedNumbers.push(bet[i]);
         }
     }
