@@ -1,6 +1,10 @@
-export { balance, addValue, subtractValue, updateBalanceValue };
+export { balance, checkFunds, addValue, subtractValue, updateBalanceValue };
 
 let balance = 1000;
+
+function checkFunds(value) {
+    return value >= balance;
+}
 
 function updateBalanceValue() {
     let USDollar = new Intl.NumberFormat('en-US', {

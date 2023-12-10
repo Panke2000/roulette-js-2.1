@@ -1,6 +1,6 @@
-export { placedBets, sum, betHistory, placeBet, undoBet, undoAll, updateList, updateBetValue, clearList, changeBetValue, convertToCurrency, betMore, betMax, betLess, betMin }
+export { placedBets, sum, totalSum, betHistory, placeBet, undoBet, undoAll, updateList, updateBetValue, clearList, changeBetValue, convertToCurrency, betMore, betMax, betLess, betMin }
 import { loan } from "./loan.js";
-import { balance } from "./balance.js";
+import { balance, checkFunds } from "./balance.js";
 import { numbers } from "./numbers.js";
 import { LOG_triggered, LOG_printArrays } from "./_LOGS.js";
 
@@ -9,10 +9,6 @@ let sum = 0; // default: 0; Value changes when there is an active loan.
 let totalSum;
 let betHistory = [];
 let currentBetValue = 5;
-
-function checkFunds(value) {
-    return value >= balance;
-}
 
 function convertToCurrency(value) {
     let USDollar = new Intl.NumberFormat('en-US', {
@@ -300,7 +296,7 @@ function placeBet_numbers(bet) {
             if (bet[i] === 'zero') {
                 bet[i] = '0';
             }
-            expectedNumbers.push(bet[i]);
+            expectedNumbers.push(numbers[bet[i]]);
         }
     }
 
