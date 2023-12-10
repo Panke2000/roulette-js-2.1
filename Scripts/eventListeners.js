@@ -1,5 +1,6 @@
 import { getLoan, payLoan, clearLoan } from "./loan.js";
 import { betMore, betMax, betLess, betMin, placeBet, undoBet, undoAll } from "./bet.js";
+import { spin } from "./spin.js";
 
 const TABLE = document.querySelector('#table');
 const DIMMER = document.querySelector('#dimmer');
@@ -41,12 +42,12 @@ const LOAN_OPTION_6 = document.querySelector('#loan-option-6');
 const INFO = document.querySelector('#info-window');
 const CLOSE_INFO = document.querySelector('#info-window .close-button');
 
-let click_sound = new Audio('/Sources/Audio/click.mp3');
-let bet_sound = new Audio('/Sources/Audio/bet.mp3');
-let spin_sound = new Audio('/Sources/Audio/spin.mp3');
-let win_sound = new Audio('/Sources/Audio/win.mp3');
-let lose_sound = new Audio('/Sources/Audio/lose.mp3');
-let pay_sound = new Audio('/Sources/Audio/pay.mp3');
+let click_sound = new Audio('./Sources/Audio/click.mp3');
+let bet_sound = new Audio('./Sources/Audio/bet.mp3');
+let spin_sound = new Audio('./Sources/Audio/spin.mp3');
+let win_sound = new Audio('./Sources/Audio/win.mp3');
+let lose_sound = new Audio('./Sources/Audio/lose.mp3');
+let pay_sound = new Audio('./Sources/Audio/pay.mp3');
 function stopSound(sound) {
     sound.pause();
     sound.currentTime = 0;
@@ -227,6 +228,7 @@ SPIN_BUTTON.addEventListener('click', (e) => {
     SPIN_WHEEL.classList.toggle('hidden');
     DIMMER.classList.toggle('hidden');
     document.body.classList.toggle('no-scroll');
+    spin();
 });
 
 CLOSE_SPINNING.addEventListener('click', (e) => {
@@ -261,3 +263,9 @@ FUNDS.addEventListener('click', (e) => {
     }
     
 });
+
+document.querySelectorAll("input").forEach( function(item) {
+    item.addEventListener('focus', function() {
+        this.blur();
+    })
+})
