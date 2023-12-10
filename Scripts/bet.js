@@ -2,6 +2,8 @@ export { placedBets, sum, betHistory, placeBet, undoBet, undoAll, updateList, up
 import { loan } from "./loan.js";
 import { balance } from "./balance.js";
 import { numbers } from "./numbers.js";
+import { LOG_triggered, LOG_printArrays } from "./_LOGS.js";
+
 let placedBets = [];
 let sum = 0; // default: 0; Value changes when there is an active loan.
 let totalSum;
@@ -31,38 +33,39 @@ function changeBetValue(value) {
     updateBetValue()
 }
 
-function LOG_printArrays() {
-    console.log('PLACED BETS:');
-    console.log(placedBets);
-    console.log('BET HISTORY:');
-    console.log(betHistory);
-}
-
-function LOG_triggered(name, args) {
-    console.log(name + ' triggered with: ' + args);
-}
-
 function betMore() {
     if (currentBetValue < 10) {
         changeBetValue(10);
+        return;
     } else if (currentBetValue < 20) {
         changeBetValue(20);
+        return;
     } else if (currentBetValue < 25) {
         changeBetValue(25);
+        return;
     } else if (currentBetValue < 50) {
         changeBetValue(50);
+        return;
     } else if (currentBetValue < 100) {
         changeBetValue(100);
+        return;
     } else if (currentBetValue < 250) {
         changeBetValue(250);
+        return;
     } else if (currentBetValue < 500) {
         changeBetValue(500);
+        return;
     } else if (currentBetValue < 1000) {
         changeBetValue(1000);
+        return;
     } else if (currentBetValue < 2000) {
         changeBetValue(2000);
+        return;
     } else if (currentBetValue < 5000) {
         changeBetValue(5000);
+        return;
+    } else {
+        console.log('Error in betMore()');
     }
 }
 
@@ -101,6 +104,8 @@ function betLess() {
     } else if (currentBetValue >= 10) {
         changeBetValue(5);
         return;
+    } else {
+        console.log('Error in betLess()');
     }
 }
 
@@ -111,6 +116,7 @@ function betMin() {
 
 function getBetType_other(bet) {
     LOG_triggered('getBetType_other()', bet);
+    console.log('? ' + bet);
     switch (bet) {
         case 'first12': case 'second12': case 'third12':
             return 'THIRD';
@@ -122,7 +128,7 @@ function getBetType_other(bet) {
             return 'EVEN-ODD';
     
         default:
-            break;
+            return 'ERROR: getBetType_other()';
     }
 }
 
@@ -133,7 +139,30 @@ function getBetType_numbers(bet) {
 }
 
 function getBetName_other(bet) {
-    return;
+    LOG_triggered('getBetName_other()', bet);
+    switch (bet) {
+        case 'first12':
+            return 'FIRST 12';
+        case 'second12': 
+            return 'SECOND 12';
+        case 'third12':
+            return 'THIRD 12';
+        case 'red': 
+            return 'RED';
+        case 'black':
+            return 'BLACK';
+        case 'low': 
+            return 'LOW'
+        case 'high':
+            return 'HIGH';
+        case 'even': 
+            return 'EVEN';
+        case 'odd':
+            return 'ODD';
+    
+        default:
+            return 'ERROR: getBetName_other()';
+    }
 }
 
 function getBetName_numbers(bet) {
@@ -161,12 +190,24 @@ function getBetName_numbers(bet) {
             return 'STREET ' + betArray[1] + '-' + betArray[2] + '-' + betArray[3] + '-' + betArray[4] + '-' + betArray[5];
     
         default:
-            break;
+            return 'ERROR: getBetName_numbers()';
     }
 }
 
 function clearList() {
     document.querySelector('#bet-list-body').innerHTML = '';
+}
+
+function isBetTypeNumber(bet) {
+    if (bet.split('-').length > 1) {
+        console.log(Array.isArray(bet.split('-')));
+        console.log(Array.isArray(bet.split('-')));
+        return true;
+    } else {
+        console.log(Array.isArray(bet.split('-'))); 
+        return false;
+    }
+    
 }
 
 function updateList() {
@@ -177,8 +218,15 @@ function updateList() {
         let cell1 = row.insertCell(-1);
         let cell2 =  row.insertCell(-1);
         let cell3 =  row.insertCell(-1);
-        cell1.innerHTML = getBetName_numbers(element.betName);
-        cell2.innerHTML = getBetType_numbers(element.betType);
+
+        if (isBetTypeNumber(element.betName)) {
+            cell1.innerHTML = getBetName_numbers(element.betName);
+            cell2.innerHTML = getBetType_numbers(element.betType);
+        } else {
+            cell1.innerHTML = getBetName_other(element.betName);
+            cell2.innerHTML = getBetType_other(element.betName);
+        }
+        
         cell3.innerHTML = convertToCurrency(element.betValue);
     });
     document.querySelector('#bets-value').innerHTML = convertToCurrency(sum);
