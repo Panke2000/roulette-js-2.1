@@ -22,6 +22,7 @@ const SPIN_BUTTON = document.querySelector('#spin');
 
 const SPIN_WHEEL = document.querySelector('#spin_wheel');
 const CLOSE_SPINNING = document.querySelector('#spin_wheel .close-button');
+const WAIT_MESSAGE = document.querySelector('#spin_wheel_message');
 
 const HISTORY = document.querySelector('#history-window');
 const CLOSE_HISTORY = document.querySelector('#history-window .close-button');
@@ -236,6 +237,10 @@ CLOSE_SPINNING.addEventListener('click', (e) => {
     click_sound.play();
     SPIN_WHEEL.classList.toggle('hidden');
     DIMMER.classList.toggle('hidden');
+    WAIT_MESSAGE.classList.remove('hidden');
+    CLOSE_SPINNING.classList.add('hidden');
+    document.querySelector('#spinning-display p').innerHTML = 'SPINNING';
+    document.querySelector('#spinning-display').style.backgroundColor = 'var(--color-green)';
     document.body.classList.toggle('no-scroll');
 });
 
