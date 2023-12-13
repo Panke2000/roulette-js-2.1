@@ -1,3 +1,4 @@
+export { stopSound };
 import { getLoan, payLoan, clearLoan } from "./loan.js";
 import { betMore, betMax, betLess, betMin, placeBet, undoBet, undoAll } from "./bet.js";
 import { spin } from "./spin.js";

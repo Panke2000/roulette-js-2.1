@@ -1,4 +1,4 @@
-export { placedBets, sum, totalSum, betHistory, placeBet, undoBet, undoAll, updateList, updateBetValue, clearList, changeBetValue, convertToCurrency, betMore, betMax, betLess, betMin }
+export { placedBets, sum, totalSum, betHistory, numberHistory, newGame, placeBet, undoBet, undoAll, updateList, updateBetValue, clearList, changeBetValue, convertToCurrency, betMore, betMax, betLess, betMin }
 import { loan } from "./loan.js";
 import { balance, checkFunds } from "./balance.js";
 import { numbers } from "./numbers.js";
@@ -8,7 +8,94 @@ let placedBets = [];
 let sum = 0; // default: 0; Value changes when there is an active loan.
 let totalSum;
 let betHistory = [];
+let numberHistory = [];
 let currentBetValue = 5;
+
+function updateHistoryStyle() {
+    LOG_triggered('updateHistoryStyle()', 'empty');
+    let list = document.querySelectorAll('#history div');
+
+    let index = 0;
+    list.forEach(element => {
+        let number = list[index].innerHTML;
+
+        if (numbers[number].color === 'red') {
+
+            list[index].style.backgroundColor = 'var(--color-red)';
+            list[index].style.border = '2px solid var(--color-yellow)';
+
+        } else if (numbers[number].color === 'black') {
+
+            list[index].style.backgroundColor = 'var(--color-black)';
+            list[index].style.border = '2px solid var(--color-yellow)';
+
+        } else {
+
+            list[index].style.backgroundColor = 'var(--color-green)';
+            list[index].style.border = '2px solid var(--color-yellow)';
+
+        }
+        index++;
+    });
+    list[list.length - 1].style.border = '5px solid var(--color-yellow)';
+}
+
+function updateHistory(number) {
+    //console.log(numberHistory);
+    LOG_triggered('updateHistory()', number);
+
+    if (numberHistory.length == 10) {
+        console.log('history > 10');
+        let list = document.querySelectorAll('#history div');
+        console.log(list);
+
+        for (let index = 0; index < list.length; index++) {
+            if (index === 9) {
+                numberHistory[9] = numbers[number];
+                list[index].innerHTML = numbers[number].value;
+            } else {
+                numberHistory[index] = numberHistory[index + 1];
+                list[index].innerHTML = numberHistory[index + 1].value;
+            }
+        }
+        console.log(numberHistory);
+
+        updateHistoryStyle();
+        return;
+    }
+
+    if(numberHistory.length >= 1 && numberHistory.length < 10) {
+        numberHistory.push(numbers[number]);
+        let div = document.createElement('div');
+        div.innerHTML = number;
+
+        document.querySelector('#history').appendChild(div);
+
+        updateHistoryStyle();
+        return;
+    }
+
+    if (numberHistory.length == 0) {
+        let noHistory = document.querySelector('#history p');
+        noHistory.classList.add('hidden');
+
+        numberHistory.push(numbers[number]);
+        let div = document.createElement('div');
+        div.innerHTML = number;
+
+        document.querySelector('#history').appendChild(div);
+
+        updateHistoryStyle();
+        return;
+    }
+}
+
+function newGame(previousNumber) {
+    LOG_triggered('newGame()', previousNumber);
+    placedBets = [];
+    betHistory = [];
+    updateHistory(previousNumber);
+}
 
 function convertToCurrency(value) {
     let USDollar = new Intl.NumberFormat('en-US', {

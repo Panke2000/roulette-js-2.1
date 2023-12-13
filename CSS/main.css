@@ -197,6 +197,10 @@ body {
     height: 50px;
     margin: 0 2px;
     border: 2px solid var(--color-black);
+    font-weight: bold;
+    font-size: x-large;
+    /*background-color: var(--color-red);
+    border: 5px solid var(--color-yellow)*/
 }
 
 #funds-window {
